@@ -8,20 +8,19 @@ import org.pircbotx.hooks.events.*;
 
 import org.duh102.duhbot.functions.*;
 
-public class MathUtils extends ListenerAdapter implements DuhbotFunction
+public class MathUtils extends ListenerAdapter implements ListeningPlugin
 {
   static java.util.Random random;
 
   static Pattern utilsPattern = Pattern.compile("^\\.(?<cmd>(?:choice|math))[ \t]+(?<rest>[^\n]+)");
-  public HashMap<String,String> getHelpFunctions()
+  public Map<String,String> getHelpFunctions()
   {
-    HashMap<String,String> helpFunctions = new HashMap<String,String>();
+    Map<String,String> helpFunctions = new HashMap<String,String>();
     helpFunctions.put("choice", "Choose randomly from a list (.choice (choice1) (choice2) )");
     //helpFunctions.put("math", "Perform some math function (.math (mathematical expression) )");
     return helpFunctions;
   }
 
-  
   public String getPluginName()
   {
     return "Math/Random Utilities";
